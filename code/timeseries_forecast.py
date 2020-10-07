@@ -3,7 +3,7 @@ from datetime import datetime
 import numpy as np
 import statsmodels.api as sm
 import configparser
-
+import os
 
 
 
@@ -24,7 +24,7 @@ def get_data(filenames,sensor):
     
     list_of_df =[]
     for file in filenames:
-        df= pd.read_csv('data/'+file,parse_dates=[2])
+        df= pd.read_csv(os.getcwd()+'/time_series_forecast/data/'+file,parse_dates=[2])
         df_updated =filter_and_structure_the_data (df,sensor)
         list_of_df.append(df_updated)
         
@@ -131,7 +131,8 @@ def main():
     
     
     config = configparser.ConfigParser()
-    config.read('config.ini')
+
+    config.read(os.getcwd()+'/time_series_forecast/config.ini')
 
     print(config)
     filenames = config['Input']['filenames'].split(',')
@@ -145,4 +146,4 @@ def main():
     
     root_mean_squared_error,mean_absolute_percentage_error= model_evaluation(test_data)
     print('root_mean_squared_error:',root_mean_squared_error,'root_mean_squared_error:',mean_absolute_percentage_error)
-    test_data.to_csv('results/forecast_data.csv')
+    test_data.to_csv(os.getcwd()+'/time_series_forecast/results/forecast_data.csv')
