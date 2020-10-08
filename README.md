@@ -20,7 +20,7 @@ Also , i have already add a output file to data folder to mention the code is wo
 
 # Libraries
 
-pandas - used for structuring the data.
-numpy -to do interpolation to fill the missing values in time series data.
-statsmodel -used for time series forecasting.
+> pandas - used for structuring the data.
+> numpy -to do interpolation to fill the missing values in time series data.
+> statsmodel -used for time series forecasting.
 
