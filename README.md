@@ -6,7 +6,9 @@ I have implemented a ARIMA model to do the time series forecasting.
 > The parameters of the ARIMA model are defined as follows:
 
 >> p: The number of lag observations included in the model.
->> d: The number of times that the raw observations are differenced..
+
+>> d: The number of times that the raw observations are differenced.
+
 >> q: The size of the moving average window, also called the order of moving average.
 
 
@@ -21,6 +23,8 @@ Also , i have already add a output file to data folder to mention the code is wo
 # Libraries
 
 > pandas - used for structuring the data.
+
 > numpy -to do interpolation to fill the missing values in time series data.
+
 > statsmodel -used for time series forecasting.
 
